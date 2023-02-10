@@ -9,7 +9,6 @@ import {BASE_URL, ENDPOINTS} from "../constants";
 })
 export class AlbumsService {
   constructor(private httpClient:HttpClient) { }
-  getAll():Observable<AlbumsJsonInterface[]>{
-    return this.httpClient.get<AlbumsJsonInterface[]>(BASE_URL+ENDPOINTS.ALBUMS)
-  }
+  getAll():Observable<AlbumsJsonInterface[]>{return this.httpClient.get<AlbumsJsonInterface[]>(BASE_URL+ENDPOINTS.ALBUMS)};
+  getAlbumId(id:number):Observable<AlbumsJsonInterface>{return this.httpClient.get<AlbumsJsonInterface>(BASE_URL+ENDPOINTS.ALBUMS + '/' + id)};
 }

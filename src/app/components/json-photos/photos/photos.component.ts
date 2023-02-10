@@ -8,13 +8,9 @@ import {PhotosService} from "../../../services";
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit{
-
   photos:PhotoJsonInterface[];
-
+  selectedPhoto:PhotoJsonInterface;
   constructor(private photosService:PhotosService) {}
-
-  ngOnInit(): void {
-    this.photosService.getAll().subscribe(value => this.photos = value);
-  }
-
+  ngOnInit(): void {this.photosService.getAll().subscribe(value => this.photos = value);}
+  getPhotoId($event: PhotoJsonInterface) {this.selectedPhoto = $event;}
 }

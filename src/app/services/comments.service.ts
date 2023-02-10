@@ -10,5 +10,6 @@ import {BASE_URL, ENDPOINTS} from "../constants";
 
 export class CommentsService {
   constructor(private httpClient:HttpClient) { }
-  getAll():Observable<CommentsJsonInterface[]>{return this.httpClient.get<CommentsJsonInterface[]>(BASE_URL+ENDPOINTS.COMMENTS)}
+  getAll():Observable<CommentsJsonInterface[]>{return this.httpClient.get<CommentsJsonInterface[]>(BASE_URL+ENDPOINTS.COMMENTS)};
+  getCommentById(id:number):Observable<CommentsJsonInterface>{return this.httpClient.get<CommentsJsonInterface>(BASE_URL+ENDPOINTS.COMMENTS+'/'+id)}
 }

@@ -9,9 +9,11 @@ import {TodosService} from "../../../services";
 })
 export class TodosComponent implements OnInit{
   todos:TodosJsonInterface[];
+  selectedTodos:TodosJsonInterface;
   constructor(private todosService:TodosService) {
   }
   ngOnInit(): void {
     this.todosService.getAll().subscribe(value => this.todos=value);
   }
+  getTodosId($event: TodosJsonInterface) {this.selectedTodos = $event;};
 }

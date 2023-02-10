@@ -1,1 +1,5 @@
-<div style="background: darkkhaki">{{"post title - "}}{{post.title}}</div>
+<div style="background: darkkhaki">
+  <a [state]="{post}" routerLink="{{post.id}}">{{"post title - "}}{{post.title}}</a>
+  <button (click)="click($event)">get post id</button>
+  <button (click)="getAllData()">get all data</button>
+</div>

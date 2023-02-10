@@ -1,1 +1,5 @@
-<div style="background: cornflowerblue">{{"comment name - "}}{{comment.name}}</div>
+<div style="background: cornflowerblue">{{"comment name - "}}
+  <a [state]="{comment}" routerLink="{{comment.id}}">{{comment.name}}</a>
+  <button (click)="click($event)">get id</button>
+  <button (click)="getCommentDetails()">get details</button>
+</div>

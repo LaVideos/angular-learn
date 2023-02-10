@@ -1,1 +1,13 @@
-<app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+<router-outlet></router-outlet>
+<hr>
+<br>
+<hr>
+<br>
+<hr>
+<div *ngIf="selectedTodos">{{selectedTodos.id}}</div>
+<hr>
+<br>
+<hr>
+<br>
+<hr>
+<app-todo *ngFor="let todo of todos" [todo]="todo" (lift)="getTodosId($event)"></app-todo>

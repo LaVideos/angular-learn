@@ -1,1 +1,5 @@
-<div style="background: darkslategrey ">{{todo.title}} - {{todo.completed}}</div>
+<div style="background: darkslategrey ">
+  <a [state]="{todo}" routerLink="{{todo.id}}">{{todo.title}}</a>
+  <button (click)="getTodosId($event)">get todos id</button>
+  <button (click)="getTodoDetails()" >get details</button>
+</div>

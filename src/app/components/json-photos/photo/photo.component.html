@@ -1,1 +1,5 @@
-<div style="background: lightcoral">{{photo.title}}</div>
+<div style="background: lightcoral">
+  <a [state]="{photo}" routerLink="{{photo.id}}">{{photo.title}}</a>
+  <button (click)="click($event)" >get photo id</button>
+  <button (click)="getPhotoDetail()">get details</button>
+</div>

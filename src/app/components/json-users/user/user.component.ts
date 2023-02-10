@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {UsersJsonInterface} from "../../../interfaces";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -9,5 +10,15 @@ import {UsersJsonInterface} from "../../../interfaces";
 export class UserComponent {
   @Input()
   user:UsersJsonInterface;
-  constructor() {}
+  @Output()
+  lift = new EventEmitter<UsersJsonInterface>();
+  constructor(private router:Router,private activatedRoute:ActivatedRoute) {}
+
+  click($event: MouseEvent):void {
+    this.lift.emit(this.user)
+  }
+
+  getFullAddress() {
+    this.router.navigate([this.user.id],{relativeTo:this.activatedRoute,state:{user:this.user}})
+  }
 }

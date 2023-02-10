@@ -8,14 +8,9 @@ import {CommentsService} from "../../../services";
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit{
-
   comments:CommentsJsonInterface[];
-
-  constructor(private commentsService:CommentsService) {
-  }
-
-  ngOnInit(): void {
-    this.commentsService.getAll().subscribe(value => this.comments = value);
-  }
-
+  selectedComment:CommentsJsonInterface;
+  constructor(private commentsService:CommentsService) {}
+  ngOnInit(): void {this.commentsService.getAll().subscribe(value => this.comments = value);};
+  getComment($event: CommentsJsonInterface) {this.selectedComment = $event;};
 }

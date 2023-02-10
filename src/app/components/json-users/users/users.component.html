@@ -1,1 +1,5 @@
-<app-user *ngFor="let user of users" [user]="user"></app-user>
+<router-outlet></router-outlet>
+<hr>
+<app-user *ngFor="let user of users" [user]="user" (lift)="getUser($event)"></app-user>
+<hr>
+<div *ngIf="selectedUser">{{selectedUser.email}}</div>

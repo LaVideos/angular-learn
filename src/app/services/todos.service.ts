@@ -9,7 +9,6 @@ import {BASE_URL, ENDPOINTS} from "../constants";
 })
 export class TodosService {
   constructor(private httpClient:HttpClient) { }
-  getAll():Observable<TodosJsonInterface[]>{
-    return this.httpClient.get<TodosJsonInterface[]>(BASE_URL+ENDPOINTS.TODOS)
-  }
+  getAll():Observable<TodosJsonInterface[]>{return this.httpClient.get<TodosJsonInterface[]>(BASE_URL+ENDPOINTS.TODOS)};
+  getTodoById(id:number):Observable<TodosJsonInterface>{return this.httpClient.get<TodosJsonInterface>(BASE_URL+ENDPOINTS.TODOS+'/'+id)}
 }

@@ -9,5 +9,6 @@ import {BASE_URL, ENDPOINTS} from "../constants";
 })
 export class PostsService {
   constructor(private httpClient:HttpClient) { }
-  getAll():Observable<PostsJsonInterface[]>{return this.httpClient.get<PostsJsonInterface[]>(BASE_URL+ENDPOINTS.POSTS)}
+  getAll():Observable<PostsJsonInterface[]>{return this.httpClient.get<PostsJsonInterface[]>(BASE_URL+ENDPOINTS.POSTS)};
+  getPostById(postId:number):Observable<PostsJsonInterface>{return this.httpClient.get<PostsJsonInterface>(BASE_URL+ENDPOINTS.POSTS + "/" + postId)}
 }

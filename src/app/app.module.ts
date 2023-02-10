@@ -4,7 +4,39 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 
 import { AppComponent } from './app.component';
-import { CommentComponent,UserComponent, PostsComponent,UsersComponent,PostComponent,CommentsComponent,PhotosComponent,PhotoComponent,TodosComponent,TodoComponent,AlbumComponent,AlbumsComponent} from './components';
+import {
+  CommentComponent,
+  UserComponent,
+  PostsComponent,
+  UsersComponent,
+  PostComponent,
+  CommentsComponent,
+  PhotosComponent,
+  PhotoComponent,
+  TodosComponent,
+  TodoComponent,
+  AlbumComponent,
+  AlbumsComponent,
+  HeaderComponent,
+  UserDetailsComponent,
+  CommentDetailComponent,
+  AlbumDetailsComponent,
+  PhotoDetailComponent,
+  TodoDetailComponent,
+  PostDetailsComponent
+} from './components';
+import {RouterModule} from "@angular/router";
+
+import {routes} from "./routes";
+import {
+  AlbumsPageComponent,
+  CommentsPageComponent,
+  PhotosPageComponent,
+  PostsPageComponent,
+  TodosPageComponent,
+  UsersPageComponent
+} from "./pages";
+import { MainLayoutComponent } from './layouts';
 
 @NgModule({
   declarations: [
@@ -20,12 +52,27 @@ import { CommentComponent,UserComponent, PostsComponent,UsersComponent,PostCompo
     PhotosComponent,
     PhotoComponent,
     TodosComponent,
-    TodoComponent
+    TodoComponent,
+    AlbumsPageComponent,
+    CommentsPageComponent,
+    UsersPageComponent,
+    PostsPageComponent,
+    PhotosPageComponent,
+    TodosPageComponent,
+    MainLayoutComponent,
+    HeaderComponent,
+    UserDetailsComponent,
+    PostDetailsComponent,
+    CommentDetailComponent,
+    AlbumDetailsComponent,
+    PhotoDetailComponent,
+    TodoDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,8 +9,18 @@ import {UserService} from "../../../services";
 })
 
 
-export class UsersComponent implements OnInit{
-  users:UsersJsonInterface[];
-  constructor( private userService:UserService) {}
-  ngOnInit(): void {this.userService.getAll().subscribe(value => this.users = value);}
+export class UsersComponent implements OnInit {
+  users: UsersJsonInterface[];
+  selectedUser: UsersJsonInterface;
+
+  constructor(private userService: UserService) {
+  }
+
+  ngOnInit(): void {
+    this.userService.getAll().subscribe(value => this.users = value);
+  }
+
+  getUser(user: UsersJsonInterface) {
+    this.selectedUser = user
+  }
 }

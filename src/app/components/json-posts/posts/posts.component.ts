@@ -8,7 +8,12 @@ import {PostsService} from "../../../services";
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit{
-  posts:PostsJsonInterface[]
+  posts:PostsJsonInterface[];
+  selectedPost:PostsJsonInterface;
   constructor(private postsService:PostsService) {}
   ngOnInit(): void {this.postsService.getAll().subscribe(value => this.posts = value);}
+
+  getPostId(post: PostsJsonInterface) {
+    this.selectedPost = post
+  }
 }

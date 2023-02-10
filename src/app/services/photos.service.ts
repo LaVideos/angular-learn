@@ -9,7 +9,6 @@ import {BASE_URL, ENDPOINTS} from "../constants";
 })
 export class PhotosService {
   constructor(private httpClient:HttpClient) { }
-  getAll():Observable<PhotoJsonInterface[]>{
-    return this.httpClient.get<PhotoJsonInterface[]>(BASE_URL+ENDPOINTS.PHOTOS)
-  }
+  getAll():Observable<PhotoJsonInterface[]>{return this.httpClient.get<PhotoJsonInterface[]>(BASE_URL+ENDPOINTS.PHOTOS)};
+  getPhotoById(id:number):Observable<PhotoJsonInterface>{return this.httpClient.get<PhotoJsonInterface>(BASE_URL+ENDPOINTS.PHOTOS + '/' + id)};
 }

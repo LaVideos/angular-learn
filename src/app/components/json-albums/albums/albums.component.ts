@@ -10,13 +10,10 @@ import {AlbumsService} from "../../../services";
 export class AlbumsComponent implements OnInit{
 
   albums:AlbumsJsonInterface[];
+  selectedAlbum:AlbumsJsonInterface;
 
   constructor(private albumsService:AlbumsService) {}
 
-  ngOnInit(): void {
-    this.albumsService.getAll().subscribe(value => this.albums = value);
-  }
-
-
-
+  ngOnInit(): void {this.albumsService.getAll().subscribe(value => this.albums = value);}
+  getAlbumId($event: AlbumsJsonInterface) {this.selectedAlbum = $event;}
 }

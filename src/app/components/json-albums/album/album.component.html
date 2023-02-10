@@ -1,1 +1,5 @@
-<div style="background: deepskyblue">{{album.title}}</div>
+<div style="background: deepskyblue">
+  <a [state]="{album}" routerLink="{{album.id}}">{{album.title}}</a>
+  <button (click)="click($event)">get album id</button>
+  <button (click)="getAlbumDetail()">get details</button>
+</div>

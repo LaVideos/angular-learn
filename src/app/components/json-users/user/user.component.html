@@ -1,1 +1,5 @@
-<div style="background: darksalmon">{{"username"}} - {{user.username}}</div>
+<div style="background: darksalmon">
+  <a [state]="{user}" routerLink="{{user.id}}">{{user.username}}</a>
+  <button (click)="click($event)">get email</button>
+  <button (click)="getFullAddress()">get full address</button>
+</div>
