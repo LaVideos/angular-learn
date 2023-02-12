@@ -1,0 +1,15 @@
+<div>
+  <div><router-outlet></router-outlet></div>
+  <br>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <div *ngIf="selectedAlbum">{{selectedAlbum.id}}</div>
+  <br>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <app-album *ngFor="let album of albums" [album]="album" (lift)="getLiftAlbums($event)"></app-album>
+</div>

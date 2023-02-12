@@ -1,0 +1,13 @@
+<div>
+  <div><router-outlet></router-outlet></div>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <div *ngIf="selectedPhoto">{{selectedPhoto.id}}</div>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <app-photo *ngFor="let photo of photos" [photo]="photo" (lift)="getLiftPhoto($event)"></app-photo>
+</div>

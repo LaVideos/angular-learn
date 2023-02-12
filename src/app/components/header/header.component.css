@@ -1,0 +1,18 @@
+.container{
+  width: 100%;
+  display: flex;
+  background: darkorange;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link{
+  text-decoration: none;
+  color: snow;
+  font-weight: 600;
+}
+
+.active-link{
+  color: #000000;
+}

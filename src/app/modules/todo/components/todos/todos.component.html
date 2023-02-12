@@ -1,0 +1,16 @@
+<div>
+  <div><router-outlet></router-outlet></div>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <div *ngIf="selectedTodos">{{selectedTodos.id}}</div>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <app-todo *ngFor="let todo of todos" [todo]="todo" (lift)="getLiftComment($event)"></app-todo>
+  </div>
+
+</div>

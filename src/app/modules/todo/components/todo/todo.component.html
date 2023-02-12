@@ -1,0 +1,11 @@
+<div class="todo-container" *ngIf="{todo}" >
+  <div>
+    <a [state]="{todo}" routerLink="{{todo.id}}">{{todo.title}}</a>
+    <button (click)="showStatus()">Show Status</button>
+    <button (click)="liftId($event)">Lift id</button>
+    <button (click)="showAllData()">Show all data</button>
+  </div>
+  <div *ngIf="status">
+    {{todo.completed}}
+  </div>
+</div>

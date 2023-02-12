@@ -1,0 +1,13 @@
+<div class="users-container">
+  <router-outlet></router-outlet>
+  <hr>
+  <br>
+  <hr>
+  <br>
+  <div *ngIf="selectedUser">{{selectedUser.id}}</div>
+  <br>
+  <hr>
+  <br>
+  <hr>
+  <app-user *ngFor="let user of users" [user]="user" (lift)="getUser($event)"></app-user>
+</div>

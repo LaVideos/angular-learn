@@ -1,0 +1,11 @@
+<div class="post-container" *ngIf="post">
+  <div class="title-btn-container">
+    <a [state]="{post}" routerLink="{{post.id}}">{{post.title}}</a>
+    <button (click)="showBody()">Show Body</button>
+    <button (click)="liftId()">Lift id</button>
+    <button (click)="showAllData()">Show all data</button>
+  </div>
+  <div *ngIf="show">
+    {{post.body}}
+  </div>
+</div>

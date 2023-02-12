@@ -1,0 +1,8 @@
+.post-container{
+  margin: 20px;
+}
+
+.title-btn-container{
+  display: flex;
+  flex-direction: row;
+}

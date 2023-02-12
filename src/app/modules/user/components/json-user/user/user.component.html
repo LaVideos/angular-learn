@@ -1,0 +1,12 @@
+<div
+  *ngIf="{user}">
+  <div class="user-container">
+    <a [state]="{user}" routerLink="{{user.id}}">{{user.id}} - {{user.name}}</a>
+    <button (click)="click($event)">Show phone number</button>
+    <button (click)="liftToFather()">Lift id</button>
+    <button (click)="showAllInfo()">Show all info</button>
+  </div>
+  <div *ngIf="showEmail">
+    {{user.phone}}
+  </div>
+</div>

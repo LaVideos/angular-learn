@@ -1,0 +1,11 @@
+<div class="comment-container" *ngIf="comment">
+  <div>
+    <a [state]="{comment}" routerLink="{{comment.id}}">{{comment.name}}</a>
+    <button (click)="ShowCommentBody()">Show Comment Body</button>
+    <button (click)="liftEmail()">Lift email</button>
+    <button (click)="showAllData()">Show All Data</button>
+  </div>
+  <div  *ngIf="show">
+    {{comment.body}}
+  </div>
+</div>

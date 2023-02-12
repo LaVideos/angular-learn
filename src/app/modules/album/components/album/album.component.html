@@ -1,0 +1,11 @@
+<div class="album-container" *ngIf="{album}">
+  <div>
+    <a [state]="{album}" routerLink="{{album.id}}">{{album.title}}</a>
+    <button (click)="showUserId()">Show User Id</button>
+    <button (click)="liftId()">Lift id</button>
+    <button (click)="showAllData()">Show all data</button>
+  </div>
+  <div *ngIf="show">
+    {{album.userId}}
+  </div>
+</div>
